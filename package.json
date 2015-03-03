@@ -1,0 +1,9 @@
+{
+  "name": "stateful-css",
+  "dependencies": {
+    "broccoli": "^0.13.3",
+    "broccoli-autoprefixer": "^2.1.0",
+    "broccoli-jade": "^1.0.1",
+    "broccoli-stylus": "^2.0.0"
+  }
+}

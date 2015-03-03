@@ -1,0 +1,86 @@
+doctype html(lang='en')
+head
+  meta(charset='UTF-8')
+  link(rel='stylesheet', href='app.css')
+  title Stateful CSS
+body
+
+  mixin slide
+    li
+      label
+        input(type='radio', name='slide')&attributes(attributes)
+        .slide
+          block
+
+  ol
+    +slide()(checked)
+      h1 Stateful CSS:
+      h2 Form #[em with] Function
+
+    +slide
+      h1 Tim G. Thomas
+      p @timgthomas
+      p timgthomas.com
+
+    +slide
+      h1 Why CSS?
+      p Smaller file size
+      p Less complexity
+      p Single responsibility
+      p Declarative
+
+    +slide
+      h1 Why #[em not] CSS?
+
+    +slide
+      h1 &ldquo;Stateful&rdquo; CSS
+
+    +slide
+      code &lt;div&gt;...&lt;/div&gt;
+
+    +slide
+      code &lt;div class="active"&gt;...&lt;/div&gt;
+
+    +slide
+      h1 Today's Experiments
+      p Form Elements
+      p Loading Indicators
+      p Text Expand/Collapse
+      p Tabs
+      p Screen States
+      p Modals
+
+    +slide
+      h1 Selectors
+      code &nbsp;
+      p &nbsp;
+
+    +slide
+      h1 Selectors
+      code :checked
+      p &nbsp;
+
+    +slide
+      h1 Selectors
+      code +
+      p (Direct sibling)
+
+    +slide
+      h1 Selectors
+      code ~
+      p (Adjacent sibling)
+
+    +slide
+      h1 Selectors
+      code .foo:checked ~ .bar
+      p &nbsp;
+
+    +slide
+      h1 Demos
+
+    +slide
+      h1 One more thing...
+
+    +slide
+      h1 Thanks!
+      p @timgthomas &middot; codepen.io/TimGThomas
