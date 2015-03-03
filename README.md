@@ -7,4 +7,4 @@ You'll need [Broccoli](http://broccolijs.com) to view the slides. After that's i
 > broccoli serve
 ```
 
-...and point your browser to [http://localhost:4200].
+...and point your browser to [localhost:4200](http://localhost:4200).
