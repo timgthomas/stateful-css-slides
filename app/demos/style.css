@@ -93,6 +93,7 @@ section {
   height: 100%;
   align-items: center;
   justify-content: center;
+  -webkit-user-select: none;
 }
 
 /* /Columns */
