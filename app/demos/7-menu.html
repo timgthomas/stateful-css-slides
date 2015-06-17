@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="7-menu.css">
+  <style>
+
+  .result {
+    flex-direction: column;
+  }
+
+  </style>
+</head>
+<body>
+  <main>
+    <section class="style">
+      <style scoped contenteditable>.menu ul {
+  visibility: hidden;
+}
+
+.menu:hover ul {
+  visibility: visible;
+}</style>
+    </section>
+    <section class="markup">
+      <pre>
+&lt;span class="menu">
+  &lt;label>Title&lt;/label>
+  &lt;ul>
+    &lt;li>&lt;a href>Title&lt;/a>&lt;/li>
+    &lt;li>&lt;a href>Author&lt;/a>&lt;/li>
+    &lt;li>&lt;a href>Publication&lt;/a>&lt;/li>
+  &lt;/ul>
+&lt;/span>
+      </pre>
+    </section>
+    <section class="result">
+
+      <span class="menu">
+        <label>Title</label>
+        <ul>
+          <li><a href>Title</a></li>
+          <li><a href>Author</a></li>
+          <li><a href>Publication</a></li>
+        </ul>
+      </span>
+
+    </section>
+  </main>
+</body>
+</html>

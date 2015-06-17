@@ -1,0 +1,127 @@
+.menu {
+  display: inline-block;
+  position: relative;
+  width: 250px;
+
+  color: hsl(0, 0%, 60%);
+}
+
+.menu:hover {
+  label {
+    border-radius: 5px 5px 0 0;
+    min-width: 100%;
+    background-color: white;
+    border-color: hsl(0, 0%, 80%);
+    transition:
+      all 350ms 0ms,
+      border-radius 350ms 350ms,
+      box-shadow 350ms 350ms;
+    box-shadow:
+      inset 0 0 transparent,
+      0 3px rgba(0, 0, 0, 0.05);
+
+    &:after {
+      opacity: 0;
+      transition:
+        opacity 350ms 0ms;
+    }
+  }
+
+  ul {
+    max-height: 150px;
+    opacity: 1;
+    visibility: visible;
+
+    transition-delay: 350ms;
+  }
+
+  .subtitle {
+    opacity: 0;
+    transition-delay: 0ms;
+  }
+}
+
+label, ul {
+  border: 1px solid hsl(0, 0%, 80%);
+}
+
+label {
+  min-width: 25%;
+
+  display: inline-block;
+  float: right;
+  padding: 5px 10px;
+  position: relative;
+  padding-right: 25px;
+  z-index: 1;
+
+  background-color: white;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 5px;
+  box-shadow:
+    inset 0 -3px 0 hsl(0, 0%, 95%),
+    0 0 0 transparent;
+  color: black;
+
+  transition:
+    all 350ms 350ms,
+    border-radius 350ms 0ms,
+    box-shadow 350ms 0ms;
+
+  &:before {
+    content: 'Sort by: ';
+    color: hsl(0, 0%, 60%);
+  }
+
+  &:after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+
+    color: hsl(0, 0%, 60%);
+    font-size: 1.0vw;
+    line-height: 2.5vw;
+    // line-height: 16px;
+
+    transition: opacity 350ms 350ms;
+  }
+}
+
+ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 5px 0;
+  z-index: 1;
+
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  border-top-width: 0;
+  box-shadow: 0 3px rgba(0, 0, 0, 0.05);
+  list-style-type: none;
+
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 350ms;
+  transition-delay: 0;
+
+  a[href] {
+
+    display: block;
+    padding: 5px 10px;
+
+    color: currentColor;
+    text-decoration: none;
+
+    transition: all 100ms;
+
+    &:hover {
+      background-color: hsl(0, 0%, 90%);
+      color: black;
+    }
+  }
+}

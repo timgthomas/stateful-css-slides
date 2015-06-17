@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* Visual Styles (safe to ignore) */
+
+    /*.button {
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+
+    background: white;
+    box-shadow: inset 0 -3px 0 hsl(0, 0%, 95%);
+    cursor: pointer;
+
+    color: hsl(0, 0%, 60%);
+    font-size: 14px;
+
+    display: inline-block;
+    outline: none;
+    padding: 10px 15px;
+    }
+
+    .button:active {
+    background: hsl(0, 0%, 98%);
+    box-shadow: inset 0 0 5px hsl(0, 0%, 85%);
+    }*/
+
+    .greek {
+      text-align: justify;
+      overflow: hidden;
+      padding: 0 0 10px;
+      position: relative;
+      width: 300px;
+      transition: max-height 500ms;
+
+      font-size: 2.0vw;
+    }
+
+    #read-more ~ .greek:after {
+      content: 'More...';
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+      height: 20px;
+      padding-left: 50px;
+
+      background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 40%,rgba(255,255,255,1) 100%);
+      opacity: 1;
+      visibility: visible;
+
+      transition: all 500ms;
+
+      color: #aaa;
+      font-style: oblique;
+      line-height: 20px;
+    }
+
+    #read-more:checked ~ .greek:after {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    p {
+      line-height: 40px;
+    }
+
+    .result {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 10%;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <section class="style em">
+      <style scoped contenteditable>#read-more {
+  display: none;
+}
+
+  #read-more ~ .greek {
+    max-height: 120px;
+  }
+
+  #read-more:checked ~ .greek {
+    max-height: 250px;
+  }</style>
+    </section>
+    <section class="markup de-em">
+      <pre>
+&lt;input id="read-more" type="checkbox">
+
+&lt;label class="button" for="read-more">
+  Show More/Less
+&lt;/label>
+
+&lt;p class="greek">Lorem ipsum dolor...&lt;/p>
+      </pre>
+    </section>
+    <section class="result">
+      <input id="read-more" type="checkbox">
+      <label class="button" for="read-more">Show More/Less</label>
+      <p class="greek">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut facilis labore odit alias perspiciatis repellat eum voluptatum debitis porro mollitia distinctio, qui, deserunt placeat delectus dolor quam aspernatur iure minus suscipit necessitatibus.</p>
+    </section>
+  </main>
+</body>
+</html>

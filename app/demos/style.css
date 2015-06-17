@@ -1,0 +1,143 @@
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+
+  outline: none;
+}
+
+body, input, button {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 2.0vw;
+  font-weight: 300;
+}
+
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+body style[contenteditable], .markup pre {
+  display: block;
+  color: #333;
+  font-size: 1.75vw;
+  line-height: 1.4;
+  font-family: 'Anonymous Pro';
+  padding: 20px;
+  white-space: pre;
+  height: 100%;
+  width: 100%;
+
+  overflow-y: auto;
+
+  /*background-image: -webkit-linear-gradient(90deg, #f35626, #feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+}
+
+style[contenteditable] {
+  border-bottom: 1px solid #ccc;
+}
+
+.result {
+  border-left: 1px solid #ccc;
+}
+
+/* Columns */
+
+html,
+body,
+main {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+section {
+  width: calc(50% - 10px);
+}
+
+.style,
+.markup {
+  height: calc(50% - 10px);
+}
+
+.em style, .de-em pre {
+  font-size: 1.75vw !important;
+}
+
+.em {
+  height: calc(60% - 10px);
+}
+
+.de-em {
+  height: calc(40% - 10px);
+}
+
+.result {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* /Columns */
+
+div {
+  margin: 0 auto;
+  padding: 0 5px 5px;
+  width: 60%;
+
+  background-color: white;
+  border: 1px solid hsl(0, 0%, 85%);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px hsl(0, 0%, 90%);
+}
+
+input[type=text] {
+  border: 0;
+  border-bottom: 1px dashed hsl(0, 0%, 75%);
+  outline: none;
+  width: 120px;
+}
+
+p {
+  line-height: 40px;
+  padding-left: 10px;
+}
+
+button, .button {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 5px;
+
+  background: white;
+  box-shadow: inset 0 -3px 0 hsl(0, 0%, 95%);
+  cursor: pointer;
+
+  color: hsl(0, 0%, 60%);
+  text-align: center;
+
+  display: block;
+  outline: none;
+  /*padding: 10px 15px;*/
+  padding: 1vw 2.5vw;
+}
+
+.button:active {
+  background: hsl(0, 0%, 98%);
+  box-shadow: inset 0 0 5px hsl(0, 0%, 85%);
+}

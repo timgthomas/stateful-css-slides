@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* Behavioral styles */
+
+    button {
+      border: 1px solid hsl(0, 0%, 80%);
+      border-radius: 5px;
+
+      background: white;
+      box-shadow: inset 0 -3px 0 hsl(0, 0%, 95%);
+      cursor: pointer;
+
+      color: hsl(0, 0%, 60%);
+
+      display: inline-block;
+      outline: none;
+    }
+
+    button:active {
+      background: hsl(0, 0%, 98%);
+      box-shadow: inset 0 0 5px hsl(0, 0%, 85%);
+    }
+
+    .loading {
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+      .loading:before {
+        content: '';
+        display: inline-block;
+        height: 2vw;
+        width: 2vw;
+        margin-right: 8px;
+        vertical-align: text-top;
+        background-image:url(data:image/gif;base64,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);
+        background-size: contain;
+      }
+
+    /* Visual styles (safe to ignore) */
+
+    div {
+      margin: 0 auto;
+      padding: 0 5px 5px;
+      width: 200px;
+
+      background-color: white;
+      border: 1px solid hsl(0, 0%, 85%);
+      border-radius: 10px;
+      box-shadow: 0 2px 5px hsl(0, 0%, 90%);
+    }
+
+    input[type=text] {
+      border: 0;
+      border-bottom: 1px dashed hsl(0, 0%, 75%);
+      outline: none;
+      width: 120px;
+    }
+
+    p {
+      line-height: 40px;
+      padding-left: 10px;
+    }
+
+    .button {
+      border: 1px solid hsl(0, 0%, 80%);
+      border-radius: 5px;
+
+      background: white;
+      box-shadow: inset 0 -3px 0 hsl(0, 0%, 95%);
+      cursor: pointer;
+
+      color: hsl(0, 0%, 60%);
+      text-align: center;
+
+      display: block;
+      outline: none;
+    }
+
+    .button:active {
+      background: hsl(0, 0%, 98%);
+      box-shadow: inset 0 0 5px hsl(0, 0%, 85%);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="style em">
+      <style scoped contenteditable>button:after {
+  content: 'Save';
+}
+
+button.loading:after {
+  content: 'Saving...';
+}</style>
+    </section>
+    <section class="markup de-em">
+      <pre>
+&lt;button>&lt;/button>
+
+&lt;script>
+  // Just a smidge :)
+&lt;/script>
+      </pre>
+    </section>
+    <section class="result">
+      <button></button>
+    </section>
+  </main>
+  <script>
+  var $button = document.getElementsByTagName('button')[0];
+
+  $button.addEventListener('click', function() {
+    $button.classList.add('loading');
+    setTimeout(function() {
+      $button.classList.remove('loading');
+    }, 1500);
+  });
+  </script>
+</body>
+</html>

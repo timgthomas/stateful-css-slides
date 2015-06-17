@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Selectors: 2) Direct Sibling</title>
+  <link rel="stylesheet" href="../demos/style.css">
+  <style>
+
+    .result {
+      flex-direction: column;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <section class="style">
+      <style scoped contenteditable>.two + p {
+  
+}</style>
+    </section>
+    <section class="markup">
+      <pre>
+&lt;p class="one">Oslo&lt;/p>
+&lt;p class="two">Bergen&lt;/p>
+&lt;p class="three">Trondheim&lt;/p>
+&lt;p class="four">Stavanger&lt;/p>
+      </pre>
+    </section>
+    <section class="result">
+      <p class="one">Oslo</p>
+      <p class="two">Bergen</p>
+      <p class="three">Trondheim</p>
+      <p class="four">Stavanger</p>
+    </section>
+  </main>
+</body>
+</html>
