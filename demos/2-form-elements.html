@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  label {
+    display: inline-block;
+    height: 44px;
+    width: 74px;
+    position: relative;
+
+    border: 1px solid #E5E5E5;
+    border-radius: 100px;
+
+    transition:
+      background-color 200ms,
+      border-color 200ms;
+  }
+
+  label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    left: 0px;
+    top: 1px;
+
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+
+    transition: left 200ms;
+  }
+
+  [type='checkbox']:checked + label {
+    border-color: transparent;
+  }
+
+  [type='checkbox']:checked + label:after {
+    left: 31px;
+  }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="style em">
+      <style scoped contenteditable>label {
+  background-color: #fff;
+}
+
+[type='checkbox']:checked + label {
+  background-color: #69db74;
+}
+
+[type='checkbox'] { display: none; }</style>
+    </section>
+    <section class="markup de-em">
+      <pre>
+&lt;input id="enabled" type="checkbox">
+&lt;label for="enabled">&lt;/label>
+      </pre>
+    </section>
+    <section class="result">
+      <input type="checkbox" id="enabled">
+      <label for="enabled"></label>
+    </section>
+  </main>
+</body>
+</html>

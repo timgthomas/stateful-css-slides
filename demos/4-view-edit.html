@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  .tabs {
+    display: table;
+    list-style-type: none;
+    margin: 0 0 10px;
+    width: 100%;
+  }
+
+  .tabs li {
+    display: table-cell;
+    }
+
+  .tabs li:first-child label { border-right-width: 0; border-radius: 5px 0 0 5px; }
+  .tabs li:last-child  label  { border-left-width: 0; border-radius: 0 5px 5px 0; }
+
+  .tabs label {
+    text-align: center;
+
+    border: 1px solid hsl(0, 0%, 80%);
+
+    background: white;
+    box-shadow: inset 0 -3px 0 hsl(0, 0%, 95%);
+    cursor: pointer;
+
+    color: hsl(0, 0%, 60%);
+    text-align: center;
+
+    display: inline-block;
+    outline: none;
+    padding: 1vw 2.5vw;
+    width: 100%;
+  }
+
+  .panel {
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+
+    background: white;
+    box-shadow: inset 0 -3px 0 hsl(0, 0%, 95%);
+    cursor: pointer;
+
+    color: black;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+
+    outline: none;
+    padding: 1vw 2.5vw;
+  }
+
+  #panel-1:checked ~ .tabs [for=panel-1],
+  #panel-2:checked ~ .tabs [for=panel-2],
+  #panel-3:checked ~ .tabs [for=panel-3] {
+    background: hsl(0, 0%, 98%);
+    box-shadow: inset 0 0 5px hsl(0, 0%, 85%);
+  }
+
+  .result {
+    flex-direction: column;
+  }
+
+  </style>
+</head>
+<body>
+  <main>
+    <section class="style">
+      <style scoped contenteditable>.view { display: block; }
+.edit { display: none; }
+
+#toggle:checked ~ .view { display: none; }
+#toggle:checked ~ .edit { display: block; }
+
+#toggle { display: none; }</style>
+    </section>
+    <section class="markup">
+      <pre>
+&lt;input id="toggle" type="checkbox">
+
+&lt;div class="view">
+  ...
+&lt;/div>
+
+&lt;div class="edit">
+  ...
+&lt;/div>
+      </pre>
+    </section>
+    <section class="result">
+
+      <input id="toggle" type="checkbox">
+
+      <div class="view">
+        <p id="result">Name: Test</p>
+        <label class="button" for="toggle">Edit</label>
+      </div>
+
+      <div class="edit">
+        <p>
+          <label for="name">Name:</label>
+          <input id="name" type="text" value="Test" />
+        </p>
+        <label class="button" for="toggle">Done</label>
+      </div>
+
+    </section>
+  </main>
+  <script>
+
+    (function() {
+      var input, result, updateName;
+
+      input = document.getElementById('name');
+      result = document.getElementById('result');
+      updateName = function(e) {
+        result.innerHTML = 'Name: ' + input.value;
+      };
+
+      input.addEventListener('keyup', updateName, false);
+    }());
+
+  </script>
+</body>
+</html>

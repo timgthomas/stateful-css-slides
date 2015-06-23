@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Selectors: 3) :checked</title>
+  <link rel="stylesheet" href="../demos/style.css">
+  <style>
+    label { padding-left: 5px; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="style em">
+      <style scoped contenteditable>[type='checkbox']:checked ~ label {
+
+}</style>
+    </section>
+    <section class="markup de-em">
+      <pre>
+&lt;input type="checkbox">
+&lt;label>Hello, Oslo!&lt;/label>
+      </pre>
+    </section>
+    <section class="result">
+      <input type="checkbox">
+      <label>Hello, Oslo!</label>
+    </section>
+  </main>
+</body>
+</html>

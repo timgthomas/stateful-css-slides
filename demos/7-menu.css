@@ -1,0 +1,99 @@
+.menu {
+  display: inline-block;
+  position: relative;
+  width: 250px;
+  color: #999;
+}
+.menu:hover label {
+  border-radius: 5px 5px 0 0;
+  min-width: 100%;
+  background-color: #fff;
+  border-color: #ccc;
+  -webkit-transition: all 350ms 0ms, border-radius 350ms 350ms, box-shadow 350ms 350ms;
+          transition: all 350ms 0ms, border-radius 350ms 350ms, box-shadow 350ms 350ms;
+  box-shadow: inset 0 0 transparent, 0 3px rgba(0,0,0,0.05);
+}
+.menu:hover label:after {
+  opacity: 0;
+  -webkit-transition: opacity 350ms 0ms;
+          transition: opacity 350ms 0ms;
+}
+.menu:hover ul {
+  max-height: 150px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-delay: 350ms;
+          transition-delay: 350ms;
+}
+.menu:hover .subtitle {
+  opacity: 0;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+label,
+ul {
+  border: 1px solid #ccc;
+}
+label {
+  min-width: 25%;
+  display: inline-block;
+  float: right;
+  padding: 5px 10px;
+  position: relative;
+  padding-right: 25px;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 -3px 0 #f2f2f2, 0 0 0 transparent;
+  color: #000;
+  -webkit-transition: all 350ms 350ms, border-radius 350ms 0ms, box-shadow 350ms 0ms;
+          transition: all 350ms 350ms, border-radius 350ms 0ms, box-shadow 350ms 0ms;
+}
+label:before {
+  content: 'Sort by: ';
+  color: #999;
+}
+label:after {
+  content: '▼';
+  position: absolute;
+  right: 10px;
+  color: #999;
+  font-size: 1vw;
+  line-height: 2.5vw;
+  -webkit-transition: opacity 350ms 350ms;
+          transition: opacity 350ms 350ms;
+}
+ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 5px 0;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  border-top-width: 0;
+  box-shadow: 0 3px rgba(0,0,0,0.05);
+  list-style-type: none;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 350ms;
+          transition: all 350ms;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+}
+ul a[href] {
+  display: block;
+  padding: 5px 10px;
+  color: currentColor;
+  text-decoration: none;
+  -webkit-transition: all 100ms;
+          transition: all 100ms;
+}
+ul a[href]:hover {
+  background-color: #e6e6e6;
+  color: #000;
+}
