@@ -113,14 +113,18 @@ button.loading:after {
     </section>
   </main>
   <script>
-  var $button = document.getElementsByTagName('button')[0];
 
-  $button.addEventListener('click', function() {
-    $button.classList.add('loading');
-    setTimeout(function() {
-      $button.classList.remove('loading');
-    }, 1500);
-  });
+  (function() {
+    var $button = document.getElementsByTagName('button')[0];
+
+    $button.addEventListener('click', function() {
+      $button.classList.add('loading');
+      setTimeout(function() {
+        $button.classList.remove('loading');
+      }, 1500);
+    });
+  }());
+
   </script>
 </body>
 </html>

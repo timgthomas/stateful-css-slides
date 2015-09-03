@@ -24,7 +24,7 @@
     left: 50%;
     top: 50%;
 
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(calc(-50% - 20px));
   }
 
   .modal .button {
@@ -58,6 +58,10 @@
   #show-modal:checked ~ .modal,
   #show-modal:checked ~ .modal-cover {
     opacity: 1;
+  }
+
+  #show-modal:checked ~ .modal {
+    transform: translateX(-50%) translateY(-50%);
   }
 
   #show-modal:checked ~ .modal-cover ~ * {
@@ -104,10 +108,10 @@
       <input id="show-modal" type="checkbox">
 
       <div class="modal">
-        <p>Hello, Oslo!</p>
+        <p>Hello, Austin!</p>
         <label class="button" for="show-modal">Hide Modal</label>
       </div>
-      <div class="modal-cover"></div>
+      <label class="modal-cover" for="show-modal"></label>
       <label class="button" for="show-modal">Show Modal</label>
       <p class="greek">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic magni fuga incidunt nemo soluta suscipit quasi voluptatibus dolorem fugiat corrupti vel expedita minus reprehenderit consequuntur ipsa dignissimos pariatur dolorum sit ea doloremque rerum sequi enim.</p>
 
